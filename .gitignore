@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# Test artifacts
+test-results/
+allure-results/
+allure-report/
+reports/
+
+# BDD generated tests
+.features-gen/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+config/env/*.env
+!config/env/qa.env
+!config/env/staging.env
+.env
+.env.local

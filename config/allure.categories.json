@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "name": "Product Defects",
+      "matchedStatuses": ["failed"],
+      "traceRegex": ".*AssertionError.*"
+    },
+    {
+      "name": "Test Infrastructure Issues",
+      "matchedStatuses": ["broken"],
+      "traceRegex": ".*TimeoutError.*"
+    },
+    {
+      "name": "Known Flaky Tests",
+      "matchedStatuses": ["broken"],
+      "messageRegex": ".*flaky.*"
+    },
+    {
+      "name": "Skipped / Ignored",
+      "matchedStatuses": ["skipped"]
+    }
+  ]
+}

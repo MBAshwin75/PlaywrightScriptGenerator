@@ -1,0 +1,22 @@
+{
+  "validUser": {
+    "firstName": "TestUser",
+    "lastName": "Automation",
+    "telephone": "5551234567",
+    "password": "SecureP@ss123"
+  },
+  "invalidUsers": {
+    "missingFirstName": {
+      "firstName": "",
+      "lastName": "Automation",
+      "telephone": "5551234567",
+      "password": "SecureP@ss123"
+    },
+    "missingEmail": {
+      "firstName": "TestUser",
+      "lastName": "Automation",
+      "telephone": "5551234567",
+      "password": "SecureP@ss123"
+    }
+  }
+}
