@@ -5,13 +5,13 @@ describe('Test Scenario', () => {
   test('Test Scenario', async ({ page }) => {
     const test_scenarioPage = new test_scenarioPage(page);
 
-    // Step 1: Opens the eCommerce Playground home page
-    await test_scenarioPage.navigateToEcommercePlayground();
-    // Step 2: Clicks the 'Shop by Category' link on the homepage
+    // Step 1: Navigate to the e‑commerce playground home page
+    await test_scenarioPage.openEcommerceSite();
+    // Step 2: Open the "Shop by Category" dropdown/menu
     await test_scenarioPage.clickShopByCategory();
-    // Step 3: Selects the 'Cameras' category from the category list
+    // Step 3: Select the "Cameras" category from the list
     await test_scenarioPage.clickCamerasCategory();
-    // Step 4: Clicks on the product 'canon EOS 5d' to view its details
+    // Step 4: Choose the product "canon EOS 5d"
     await test_scenarioPage.selectCanonEOS5d();
   });
 });

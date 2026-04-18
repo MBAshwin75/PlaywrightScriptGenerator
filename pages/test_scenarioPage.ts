@@ -21,7 +21,7 @@ import { Logger } from '../utils/logger/Logger';
  */
 export class test_scenarioPage extends BasePage {
   // Define selectors as properties for reusability
-  private readonly navigate_to_ecommerce_playgroundSelector = this.page.locator('https://ecommerce-playground.lambdatest.io');
+  private readonly open_ecommerce_siteSelector = this.page.locator('https://ecommerce-playground.lambdatest.io');
   private readonly click_shop_by_categorySelector = this.page.locator('text=Shop by Category');
   private readonly click_cameras_categorySelector = this.page.locator('text=Cameras');
   private readonly select_canon_e_o_s5dSelector = this.page.locator('text=canon EOS 5d');
@@ -35,23 +35,13 @@ export class test_scenarioPage extends BasePage {
   // ============================================================
 
   /**
-   * Opens the eCommerce Playground home page
+   * Navigate to the e‑commerce playground home page
    * Uses inherited navigate() method
    */
-  async navigateToEcommercePlayground(): Promise<test_scenarioPage> {
+  async openEcommerceSite(): Promise<test_scenarioPage> {
     await this.navigate('https://ecommerce-playground.lambdatest.io');
     // Wait for page content to load
     await this.waitForVisible(this.page.locator('body'), 10000);
-    return this;
-  }
-
-  /**
-   * Clicks the 'Shop by Category' link on the homepage
-   * Uses inherited clickElement() method
-   */
-  async clickShopByCategory(): Promise<test_scenarioPage> {
-    const locator = this.page.locator('text=Shop by Category');
-    await this.clickElement(locator, 'clickShopByCategory');
     return this;
   }
 
@@ -60,7 +50,17 @@ export class test_scenarioPage extends BasePage {
   // ============================================================
 
   /**
-   * Selects the 'Cameras' category from the category list
+   * Open the "Shop by Category" dropdown/menu
+   * Uses inherited clickElement() method
+   */
+  async clickShopByCategory(): Promise<test_scenarioPage> {
+    const locator = this.page.locator('text=Shop by Category');
+    await this.clickElement(locator, 'clickShopByCategory');
+    return this;
+  }
+
+  /**
+   * Select the "Cameras" category from the list
    * Uses inherited clickElement() method
    */
   async clickCamerasCategory(): Promise<test_scenarioPage> {
@@ -70,7 +70,7 @@ export class test_scenarioPage extends BasePage {
   }
 
   /**
-   * Clicks on the product 'canon EOS 5d' to view its details
+   * Choose the product "canon EOS 5d"
    * Uses inherited clickElement() method
    */
   async selectCanonEOS5d(): Promise<test_scenarioPage> {
